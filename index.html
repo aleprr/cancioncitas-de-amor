@@ -2,15 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cancioncitas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancioncitas 💌</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #ff8a8a, #ffa94d);
       color: #fff;
       text-align: center;
+      padding-bottom: 50px;
     }
     h1 {
       margin-top: 20px;
@@ -26,43 +30,54 @@
     .carta {
       background: #fff;
       color: #333;
-      width: 300px;
+      width: 100%;
+      max-width: 350px;
       border-radius: 20px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.25);
       overflow: hidden;
       padding: 15px;
       transition: transform 0.3s ease;
-      text-align: left;
     }
     .carta:hover {
       transform: scale(1.03);
     }
     .carta h2 {
       margin-top: 0;
-      font-size: 1.5rem;
     }
     .carta p {
-      margin: 10px 0;
+      margin: 5px 0 10px;
+      font-style: italic;
     }
-    .carta a {
-      color: #ff5e5e;
-      font-weight: bold;
-      text-decoration: none;
+    .contenido-carta {
+      display: none;
+      text-align: left;
     }
     .carta button {
       margin-top: 10px;
-      padding: 8px 15px;
-      background-color: #ffa94d;
+      background-color: #ff8a8a;
       border: none;
-      border-radius: 10px;
       color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .carta button:hover {
+      background-color: #ff6f6f;
     }
     footer {
-      margin: 40px 0 20px;
+      margin-top: 40px;
       font-size: 1.2rem;
       font-weight: bold;
+    }
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .carta {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -70,150 +85,149 @@
   <h1>Cancioncitas 💌</h1>
 
   <div class="cartas-container">
-    
-    <!-- Carta 1: Te juro que te amo -->
     <div class="carta">
-      <h2>Te juro que te amo</h2>
-      <p><strong>Los Terrícolas</strong></p>
-      <div class="contenido-carta" style="display: none;">
-        <p>Qué hermosa canción... Me recuerda a ese día <strong>17 de noviembre</strong>, probablemente el día en que se cayó el mundo para mí.</p>
-        <p>Ese "tenemos que separarnos" me lo repitió por meses mi mente, mi corazón y mi todo. Ese último día de clases fue un infierno. Lo había perdido todo.</p>
-        <p>“Qué falta tú me harás”, “Me falta el mundo entero si tú te vas”... En las reuniones mi estado emocional empeoraba, me sentía fatal. Nunca podría cambiarte, siempre pensé. Eso siempre lo sabré.</p>
-        <p>Incluso una chica intentó coquetearme, pero harto de la vida la traté mal, porque cuando uno quiere y no puede... es donde más duele. Es peor que cualquier puñalada.</p>
-        <p>Sentía que el mundo se burlaba de mí. Sentí que todo lo había perdido. Todos se burlaron por derrochar tantas emociones.</p>
-        <p>Recuerdo ese día en que José David se burló de mí por estar más tiempo con ella. Me presumió que él fue su primer amor, su primer beso.</p>
-        <p>Hice lo que mejor sé hacer: fingí que no me importaba. Pero al llegar a casa... estuve <strong>cuatro noches llorando</strong>. No dormía bien, ni comía. Tan siquiera pensé que de amor me moriría.</p>
-        <p>Pensé que la vida me traicionó por pagarme con nada más que dolor. Pero aún así, por eso <strong>juro que la amo</strong>. Jamás la olvidaría. Aguantaría ese dolor y mucho más. Hasta enfrentarme a mí mismo... lo haría. 💔</p>
-        <p><a href="https://www.youtube.com/watch?v=EsmE9xoe6es" target="_blank">Escuchar en YouTube</a></p>
-      </div>
-      <button onclick="toggleCarta(this)">Leer carta</button>
-    </div>
-
-    <!-- Carta 2: Cafuné -->
-    <div class="carta">
-      <h2>Cafuné</h2>
-      <p><strong>Micro TDH</strong></p>
-      <div class="contenido-carta" style="display: none;">
-        <p>“Cafuné”... esa canción tiene algo mágico, como tú. Es de esas canciones que no suenan, sino que se sienten.</p>
-        <p>Me recuerda a los días en los que todo era más suave, más bonito. Cuando tu risa era mi canción favorita, y tu voz, mi melodía diaria.</p>
-        <p>Pienso en esos pequeños momentos, donde solo con mirarnos sabíamos que estábamos en casa. Tú eras mi lugar seguro. Mi paz.</p>
-        <p>Cada vez que escucho "Cafuné", me acuerdo de tus caricias, de cómo me arreglabas el cabello sin decir nada, como quien cuida algo que no quiere perder.</p>
-        <p>Esos instantes donde no hacían falta palabras, porque todo lo decían tus ojos. Ese amor que no gritaba, pero que se sentía inmenso.</p>
-        <p>Y aunque ahora no estés aquí, cada nota de esta canción me abraza como lo hacías tú. Y por un momento... cierro los ojos y vuelvo contigo.</p>
-        <p><a href="https://www.youtube.com/watch?v=fsq5jz59AKQ" target="_blank">Escuchar en YouTube</a></p>
-      </div>
-      <button onclick="toggleCarta(this)">Leer carta</button>
-    </div>
-    <div class="carta">
-        <h2>Mai</h2>
-        <p><strong>Milo J</strong></p>
+        <h2>Te juro que te amo</h2>
+        <p><strong>Los Terrícolas</strong></p>
         <div class="contenido-carta" style="display: none;">
-          <p>“No pensé que funcionara así”… y sin embargo, funcionó.</p>
-          <p>Fuiste mi suerte, la más bonita forma que el mundo tuvo de decirme que, en verdad, me quería.</p>
-          <p>No hizo falta más que tú para volver a sonreír. No necesité más que eso… jamás pediría más.</p>
-          <p>El tiempo no perdona, como dice la canción. Por eso me encantaría que estés conmigo <strong>cada momento que puedas</strong>.</p>
-          <p>Porque a veces siento que mi vida se desmorona… pero gracias a ti, todo puede ser pasable. Todo se vuelve más suave, más bonito, más tú.</p>
-          <p>Por ti <em>“daría la piel para ser de abrigo”</em>.</p>
-          <p>Te ofrezco mi amor, mi corazón sincero, Angie. <strong>Niña hermosa</strong> que lo cambió todo en mi vida. 💛</p>
-          <p><a href="https://www.youtube.com/watch?v=pcHrhzS42Tw" target="_blank">Escuchar en YouTube</a></p>
+          <p>Qué hermosa canción... Me recuerda a ese día <strong>17 de noviembre</strong>, probablemente el día en que se cayó el mundo para mí.</p>
+          <p>Ese "tenemos que separarnos" me lo repitió por meses mi mente, mi corazón y mi todo. Ese último día de clases fue un infierno. Lo había perdido todo.</p>
+          <p>“Qué falta tú me harás”, “Me falta el mundo entero si tú te vas”... En las reuniones mi estado emocional empeoraba, me sentía fatal. Nunca podría cambiarte, siempre pensé. Eso siempre lo sabré.</p>
+          <p>Incluso una chica intentó coquetearme, pero harto de la vida la traté mal, porque cuando uno quiere y no puede... es donde más duele. Es peor que cualquier puñalada.</p>
+          <p>Sentía que el mundo se burlaba de mí. Sentí que todo lo había perdido. Todos se burlaron por derrochar tantas emociones.</p>
+          <p>Recuerdo ese día en que José David se burló de mí por estar más tiempo con ella. Me presumió que él fue su primer amor, su primer beso.</p>
+          <p>Hice lo que mejor sé hacer: fingí que no me importaba. Pero al llegar a casa... estuve <strong>cuatro noches llorando</strong>. No dormía bien, ni comía. Tan siquiera pensé que de amor me moriría.</p>
+          <p>Pensé que la vida me traicionó por pagarme con nada más que dolor. Pero aún así, por eso <strong>juro que la amo</strong>. Jamás la olvidaría. Aguantaría ese dolor y mucho más. Hasta enfrentarme a mí mismo... lo haría. 💔</p>
+          <p><a href="https://www.youtube.com/watch?v=EsmE9xoe6es" target="_blank">Escuchar en YouTube</a></p>
+        </div>
+        <button onclick="toggleCarta(this)">Leer carta</button>
+      </div>
+  
+      <!-- Carta 2: Cafuné -->
+      <div class="carta">
+        <h2>Cafuné</h2>
+        <p><strong>Micro TDH</strong></p>
+        <div class="contenido-carta" style="display: none;">
+          <p>“Cafuné”... esa canción tiene algo mágico, como tú. Es de esas canciones que no suenan, sino que se sienten.</p>
+          <p>Me recuerda a los días en los que todo era más suave, más bonito. Cuando tu risa era mi canción favorita, y tu voz, mi melodía diaria.</p>
+          <p>Pienso en esos pequeños momentos, donde solo con mirarnos sabíamos que estábamos en casa. Tú eras mi lugar seguro. Mi paz.</p>
+          <p>Cada vez que escucho "Cafuné", me acuerdo de tus caricias, de cómo me arreglabas el cabello sin decir nada, como quien cuida algo que no quiere perder.</p>
+          <p>Esos instantes donde no hacían falta palabras, porque todo lo decían tus ojos. Ese amor que no gritaba, pero que se sentía inmenso.</p>
+          <p>Y aunque ahora no estés aquí, cada nota de esta canción me abraza como lo hacías tú. Y por un momento... cierro los ojos y vuelvo contigo.</p>
+          <p><a href="https://www.youtube.com/watch?v=fsq5jz59AKQ" target="_blank">Escuchar en YouTube</a></p>
         </div>
         <button onclick="toggleCarta(this)">Leer carta</button>
       </div>
       <div class="carta">
-        <h2>Eres mía</h2>
-        <p><strong>Romeo Santos</strong></p>
-        <div class="contenido-carta" style="display: none;">
-          <p>¿Qué puedo decir? Soy muy posesivo, señorita 😏 así que nunca voltees a ver a otro, porque si no… me veo en la necesidad de llorar :3</p>
-          <p>Por eso siempre serás mía, mía. Tú lo sabes, ¿no?</p>
-          <p>“Tú conoces mis errores, el egoísmo de ser dueño de tu vida”… eso lo sabes bien. Soy posesivo y celoso, pero controlado. Y por eso, yo siempre <strong>te protegería</strong>.</p>
-          <p>Me encantaría que siempre quisieras estar conmigo, que cada día fuera una decisión tuya el elegirme una vez más.</p>
-          <p>No te asombres si te hago mía, mía… es más, te pongo firma de que estés a mi nombre 🖊️</p>
-          <p>Con otra mujer me daría igual… pero a <strong>usted</strong>, a ti, no me arriesgaría a perderte por nada.</p>
-          <p>Por eso te amaré, te respetaré y daré todo de mí para que seas mía... <strong>por tu propia decisión</strong>. ❤️</p>
-          <p><a href="https://www.youtube.com/watch?v=fWw37lCgXGc" target="_blank">Escuchar en YouTube</a></p>
+          <h2>Mai</h2>
+          <p><strong>Milo J</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>“No pensé que funcionara así”… y sin embargo, funcionó.</p>
+            <p>Fuiste mi suerte, la más bonita forma que el mundo tuvo de decirme que, en verdad, me quería.</p>
+            <p>No hizo falta más que tú para volver a sonreír. No necesité más que eso… jamás pediría más.</p>
+            <p>El tiempo no perdona, como dice la canción. Por eso me encantaría que estés conmigo <strong>cada momento que puedas</strong>.</p>
+            <p>Porque a veces siento que mi vida se desmorona… pero gracias a ti, todo puede ser pasable. Todo se vuelve más suave, más bonito, más tú.</p>
+            <p>Por ti <em>“daría la piel para ser de abrigo”</em>.</p>
+            <p>Te ofrezco mi amor, mi corazón sincero, Angie. <strong>Niña hermosa</strong> que lo cambió todo en mi vida. 💛</p>
+            <p><a href="https://www.youtube.com/watch?v=pcHrhzS42Tw" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
         </div>
-        <button onclick="toggleCarta(this)">Leer carta</button>
-      </div>
-      <div class="carta">
-        <h2>Imitadora</h2>
-        <p><strong>Romeo Santos</strong></p>
-        <div class="contenido-carta" style="display: none;">
-          <p>No hay nada más aterrador que mirar a los ojos de la persona que amas… y sentir que ya no está ahí.</p>
-          <p>Que esa sonrisa que me iluminaba ahora parece ensayada. Que sus palabras suenan a libreto. Que sus abrazos ya no tienen el mismo calor.</p>
-          <p>¿Qué pasó con la mujer que me hacía temblar solo con una mirada? ¿Dónde está esa niña con alma libre que me enseñó lo que era amar sin medida?</p>
-          <p>Me da miedo… miedo que un día te levantes y seas solo la sombra de lo que fuiste. Una imitadora… de ti misma.</p>
-          <p>No quiero besar los labios correctos, pero sin sentir lo mismo. No quiero abrazar a alguien que huele igual, pero no vibra igual. No quiero perderte mientras sigues aquí…</p>
-          <p>¿Y si cambias? ¿Y si te vas sin irte? ¿Y si dejo de reconocerte…? A veces siento que me estoy despidiendo, aunque aún estés conmigo.</p>
-          <p>Solo te pido una cosa: si alguna vez empiezas a convertirte en alguien más, si alguna vez te alejas de lo que fuiste, <strong>vuelve</strong>. Vuelve por ti. Vuelve por mí. Vuelve por lo que fuimos. 🖤</p>
-          <p><a href="https://www.youtube.com/watch?v=rcNSXsBSWFE" target="_blank">Escuchar en YouTube</a></p>
+        <div class="carta">
+          <h2>Eres mía</h2>
+          <p><strong>Romeo Santos</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>¿Qué puedo decir? Soy muy posesivo, señorita 😏 así que nunca voltees a ver a otro, porque si no… me veo en la necesidad de llorar :3</p>
+            <p>Por eso siempre serás mía, mía. Tú lo sabes, ¿no?</p>
+            <p>“Tú conoces mis errores, el egoísmo de ser dueño de tu vida”… eso lo sabes bien. Soy posesivo y celoso, pero controlado. Y por eso, yo siempre <strong>te protegería</strong>.</p>
+            <p>Me encantaría que siempre quisieras estar conmigo, que cada día fuera una decisión tuya el elegirme una vez más.</p>
+            <p>No te asombres si te hago mía, mía… es más, te pongo firma de que estés a mi nombre 🖊️</p>
+            <p>Con otra mujer me daría igual… pero a <strong>usted</strong>, a ti, no me arriesgaría a perderte por nada.</p>
+            <p>Por eso te amaré, te respetaré y daré todo de mí para que seas mía... <strong>por tu propia decisión</strong>. ❤️</p>
+            <p><a href="https://www.youtube.com/watch?v=fWw37lCgXGc" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
         </div>
-        <button onclick="toggleCarta(this)">Leer carta</button>
-      </div>
-      <div class="carta">
-        <h2>Febrero 14</h2>
-        <p><strong>Sebastián</strong></p>
-        <div class="contenido-carta" style="display: none;">
-          <p>¿Te acuerdas? <strong>Yo sí</strong>. Vaya que me acuerdo…</p>
-          <p>Angie, me gustaría ser tu <strong>Febrero 14</strong>. Pero no solo por un día… sino para toda la vida.</p>
-          <p>Quiero ser lo primero que pienses al despertar… y lo último que sueñes al dormir.</p>
-          <p>Quiero ser yo… para poder amarte. Para intentarlo. Para ser ese “alguien” que lo da todo, con la esperanza de que me elijas.</p>
-          <p>Y si tú quieres... <strong>puedo ser yo</strong> si te convieneeeeeee…</p>
-          <p>Yo ya decidí. Te elijo hoy, mañana, siempre. ¿Y tú?</p>
-          <p>Porque quiero que estés conmigo <strong>toda la vida</strong>. En tus días buenos y en tus tormentas. En tu caos y en tu calma. Ser tu hogar. Ser tu amor. Ser tú y yo, para siempre.</p>
-          <p>Porque el amor no se trata solo de flores y regalos un día. Se trata de elegirnos aunque pasen los años. Aunque ya no sea 14 de febrero.</p>
-          <p>Yo quiero que el 14 seas tú. Todos los días. Por siempre.</p>
-          <p><a href="https://www.youtube.com/watch?v=C0OXsyR2mMM" target="_blank">Escuchar en YouTube</a></p>
+        <div class="carta">
+          <h2>Imitadora</h2>
+          <p><strong>Romeo Santos</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>No hay nada más aterrador que mirar a los ojos de la persona que amas… y sentir que ya no está ahí.</p>
+            <p>Que esa sonrisa que me iluminaba ahora parece ensayada. Que sus palabras suenan a libreto. Que sus abrazos ya no tienen el mismo calor.</p>
+            <p>¿Qué pasó con la mujer que me hacía temblar solo con una mirada? ¿Dónde está esa niña con alma libre que me enseñó lo que era amar sin medida?</p>
+            <p>Me da miedo… miedo que un día te levantes y seas solo la sombra de lo que fuiste. Una imitadora… de ti misma.</p>
+            <p>No quiero besar los labios correctos, pero sin sentir lo mismo. No quiero abrazar a alguien que huele igual, pero no vibra igual. No quiero perderte mientras sigues aquí…</p>
+            <p>¿Y si cambias? ¿Y si te vas sin irte? ¿Y si dejo de reconocerte…? A veces siento que me estoy despidiendo, aunque aún estés conmigo.</p>
+            <p>Solo te pido una cosa: si alguna vez empiezas a convertirte en alguien más, si alguna vez te alejas de lo que fuiste, <strong>vuelve</strong>. Vuelve por ti. Vuelve por mí. Vuelve por lo que fuimos. 🖤</p>
+            <p><a href="https://www.youtube.com/watch?v=rcNSXsBSWFE" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
         </div>
-        <button onclick="toggleCarta(this)">Leer carta</button>
-      </div>
-      <div class="carta">
-        <h2>Baile inolvidable</h2>
-        <p><strong>Bad Bunny</strong></p>
-        <div class="contenido-carta" style="display: none;">
-          <p>La canción tiene partes algo obscenas, sí… a veces lujuriosas. Pero quiero que te fijes en lo esencial. En lo que de verdad se siente en ella.</p>
-          <p>Créeme que te veo con ojos de deseo… pero no de lujuria. Nunca podría ver a tremenda ternurita con otros ojos que no sean de amor.</p>
-          <p>Jamás te usaría por tu cuerpo. Aunque es hermoso… lo que más valoro de ti está adentro. Y por eso… tú eres mi <strong>baile inolvidable</strong>.</p>
-          <p>No hay forma de reemplazarte. No hay forma de olvidarte. Porque como dice la canción: <em>“Mientras uno esté vivo, debe amar lo más que pueda”</em>. Y eso haré… te amaré al máximo. Hasta el límite. Hasta donde mi alma aguante.</p>
-          <p>JAMÁS te diría que se me acabó el amor. Porque lo que siento por ti es eterno. Me partió el corazón escuchar aquel “<em>en otra vida, tal vez</em>”.</p>
-          <p>Yo no quiero otra vida… <strong>yo te quiero en esta</strong>. En esta vida quiero casarme contigo. Vivir felices. Formar una familia. Que conozcas a mis padres. Que yo conozca a los tuyos. Que mis hermanas sean amigas tuyas y tú seas parte de mi día a día.</p>
-          <p>Quiero llenarte de amor todos los días. A cada rato. Porque tengo un nuevo paso que enseñarte…</p>
-          <p>Un paso eterno. Infinito. 💃🧡</p>
-          <p><a href="https://www.youtube.com/watch?v=Vw_lols-BZA" target="_blank">Escuchar en YouTube</a></p>
+        <div class="carta">
+          <h2>Febrero 14</h2>
+          <p><strong>Sebastián</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>¿Te acuerdas? <strong>Yo sí</strong>. Vaya que me acuerdo…</p>
+            <p>Angie, me gustaría ser tu <strong>Febrero 14</strong>. Pero no solo por un día… sino para toda la vida.</p>
+            <p>Quiero ser lo primero que pienses al despertar… y lo último que sueñes al dormir.</p>
+            <p>Quiero ser yo… para poder amarte. Para intentarlo. Para ser ese “alguien” que lo da todo, con la esperanza de que me elijas.</p>
+            <p>Y si tú quieres... <strong>puedo ser yo</strong> si te convieneeeeeee…</p>
+            <p>Yo ya decidí. Te elijo hoy, mañana, siempre. ¿Y tú?</p>
+            <p>Porque quiero que estés conmigo <strong>toda la vida</strong>. En tus días buenos y en tus tormentas. En tu caos y en tu calma. Ser tu hogar. Ser tu amor. Ser tú y yo, para siempre.</p>
+            <p>Porque el amor no se trata solo de flores y regalos un día. Se trata de elegirnos aunque pasen los años. Aunque ya no sea 14 de febrero.</p>
+            <p>Yo quiero que el 14 seas tú. Todos los días. Por siempre.</p>
+            <p><a href="https://www.youtube.com/watch?v=C0OXsyR2mMM" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
         </div>
-        <button onclick="toggleCarta(this)">Leer carta</button>
-      </div>
-      <div class="carta">
-        <h2>Estos celos</h2>
-        <p><strong>Vicente Fernández</strong></p>
-        <div class="contenido-carta" style="display: none;">
-          <p>Mmm… ¿qué puedo decir? Solo pensar que algún día no voy a ser yo a quien ames… me enloquece, me enferma, me enoja.</p>
-          <p>“Te imaginé ajena y me hizo mal…”</p>
-          <p>Es que te miro, y simplemente veo a una mujer hermosa… una mujer que con todas las ansias del mundo quiero que me ame a mí, siempre. Que no cambie. Que se quede conmigo.</p>
-          <p>Cada vez que te veo, mi mente suena así:</p>
-          <p><em>“Te miré… con tu melena al viento y tu mirar… y al ras de tu escote, tu lunar… ¡ayyyy ay amor! ¡ayyyy ay qué dolor! ¡Oh, muero de pensar que no voy a ser yo al que vas a amar!”</em></p>
-          <p>Esos celos… me hacen daño. Me enloquecen. 😡😡</p>
-          <p>Así soy… bastante celoso, pero comprensivo. Nunca tendría un arrebato, pero sí, cuando me dan celos, a veces solo me da aburrimiento jsjsjs.</p>
-          <p>Me acuerdo de aquella pregunta… “¿quién fue tu primer beso?” 🤣🤣. Estuve aburrido como 2 semanas y con una rabia absurda… pero también sé que eso no importa.</p>
-          <p>Porque el pasado ya fue. Y besos son los que te quiero dar yo. Todos los días. Toda la vida.</p>
-          <p>No quiero decir jamás: <em>“Contigo tenía todo y lo perdí.”</em></p>
-          <p>Te amo, Angie. Celoso, sí… pero también tuyo. 💘</p>
-          <p><a href="https://www.youtube.com/watch?v=CGfAD22RO98" target="_blank">Escuchar en YouTube</a></p>
+        <div class="carta">
+          <h2>Baile inolvidable</h2>
+          <p><strong>Bad Bunny</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>La canción tiene partes algo obscenas, sí… a veces lujuriosas. Pero quiero que te fijes en lo esencial. En lo que de verdad se siente en ella.</p>
+            <p>Créeme que te veo con ojos de deseo… pero no de lujuria. Nunca podría ver a tremenda ternurita con otros ojos que no sean de amor.</p>
+            <p>Jamás te usaría por tu cuerpo. Aunque es hermoso… lo que más valoro de ti está adentro. Y por eso… tú eres mi <strong>baile inolvidable</strong>.</p>
+            <p>No hay forma de reemplazarte. No hay forma de olvidarte. Porque como dice la canción: <em>“Mientras uno esté vivo, debe amar lo más que pueda”</em>. Y eso haré… te amaré al máximo. Hasta el límite. Hasta donde mi alma aguante.</p>
+            <p>JAMÁS te diría que se me acabó el amor. Porque lo que siento por ti es eterno. Me partió el corazón escuchar aquel “<em>en otra vida, tal vez</em>”.</p>
+            <p>Yo no quiero otra vida… <strong>yo te quiero en esta</strong>. En esta vida quiero casarme contigo. Vivir felices. Formar una familia. Que conozcas a mis padres. Que yo conozca a los tuyos. Que mis hermanas sean amigas tuyas y tú seas parte de mi día a día.</p>
+            <p>Quiero llenarte de amor todos los días. A cada rato. Porque tengo un nuevo paso que enseñarte…</p>
+            <p>Un paso eterno. Infinito. 💃🧡</p>
+            <p><a href="https://www.youtube.com/watch?v=Vw_lols-BZA" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
         </div>
-        <button onclick="toggleCarta(this)">Leer carta</button>
-      </div>
-      
+        <div class="carta">
+          <h2>Estos celos</h2>
+          <p><strong>Vicente Fernández</strong></p>
+          <div class="contenido-carta" style="display: none;">
+            <p>Mmm… ¿qué puedo decir? Solo pensar que algún día no voy a ser yo a quien ames… me enloquece, me enferma, me enoja.</p>
+            <p>“Te imaginé ajena y me hizo mal…”</p>
+            <p>Es que te miro, y simplemente veo a una mujer hermosa… una mujer que con todas las ansias del mundo quiero que me ame a mí, siempre. Que no cambie. Que se quede conmigo.</p>
+            <p>Cada vez que te veo, mi mente suena así:</p>
+            <p><em>“Te miré… con tu melena al viento y tu mirar… y al ras de tu escote, tu lunar… ¡ayyyy ay amor! ¡ayyyy ay qué dolor! ¡Oh, muero de pensar que no voy a ser yo al que vas a amar!”</em></p>
+            <p>Esos celos… me hacen daño. Me enloquecen. 😡😡</p>
+            <p>Así soy… bastante celoso, pero comprensivo. Nunca tendría un arrebato, pero sí, cuando me dan celos, a veces solo me da aburrimiento jsjsjs.</p>
+            <p>Me acuerdo de aquella pregunta… “¿quién fue tu primer beso?” 🤣🤣. Estuve aburrido como 2 semanas y con una rabia absurda… pero también sé que eso no importa.</p>
+            <p>Porque el pasado ya fue. Y besos son los que te quiero dar yo. Todos los días. Toda la vida.</p>
+            <p>No quiero decir jamás: <em>“Contigo tenía todo y lo perdí.”</em></p>
+            <p>Te amo, Angie. Celoso, sí… pero también tuyo. 💘</p>
+            <p><a href="https://www.youtube.com/watch?v=CGfAD22RO98" target="_blank">Escuchar en YouTube</a></p>
+          </div>
+          <button onclick="toggleCarta(this)">Leer carta</button>
+        </div>
   </div>
 
   <footer>
-    Hecho con 💖 por Alejandro, con amor claramente, MAMASHITA mia
+    Hecho con 💖 por Alejandro
   </footer>
 
   <script>
     function toggleCarta(btn) {
       const carta = btn.previousElementSibling;
-      const visible = carta.style.display === 'block';
-      carta.style.display = visible ? 'none' : 'block';
-      btn.textContent = visible ? 'Leer carta' : 'Ocultar carta';
+      const abiertas = document.querySelectorAll('.contenido-carta');
+      abiertas.forEach(el => {
+        if (el !== carta) el.style.display = 'none';
+      });
+      carta.style.display = (carta.style.display === 'block') ? 'none' : 'block';
     }
   </script>
 </body>
